@@ -34,6 +34,13 @@ export default function routes($stateProvider) {
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
+      })
+      .state('password', {
+        url: '/settings/password',
+        template: require('./settings/password/password.html'),
+        controller: 'PasswordController',
+        controllerAs: 'vm',
+        authenticate: true
       });
 }
 

@@ -5,6 +5,7 @@ const uiRouter = require('angular-ui-router');
 
 import routing from './account.routes';
 import login from './login';
+import password from './settings/password';
 import settings from './settings';
 import signup from './signup';
 
@@ -14,6 +15,7 @@ export default angular.module('welpApp.account', [
     uiRouter,
     login,
     settings,
+    password,
     signup
 ])
     .config(routing)

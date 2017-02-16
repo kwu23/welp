@@ -22,6 +22,7 @@ import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
+import SitePagesComponent from './sitePages/sitePages.component';
 
 
 
@@ -43,7 +44,9 @@ angular.module('welpApp', [
   main,
   constants,
 
-  util
+  util,
+
+  SitePagesComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

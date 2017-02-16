@@ -1,15 +1,25 @@
 'use strict';
 const angular = require('angular');
-
 const uiRouter = require('angular-ui-router');
 
 import routes from './sitePages.routes';
 
 export class SitePagesComponent {
+  $http;
+
+  sitePages = [];
+
   /*@ngInject*/
-  constructor() {
-    // this.message = 'Hello';
+  constructor($http) {
+    this.$http = $http;
   }
+
+  $onInit() {
+    this.$http.get('/api/sitePages').then(response => {
+      this.sitePages = response.data;
+    });
+  }
+
 }
 
 export default angular.module('welpApp.sitePages', [uiRouter])

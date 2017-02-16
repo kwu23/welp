@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import SitePage from '../api/sitePage/sitePage.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -55,5 +56,28 @@ User.find({}).remove()
     })
     .then(() => {
       console.log('finished populating users');
+    });
+  });
+
+SitePage.find({}).remove()
+  .then(() => {
+    SitePage.create({
+      name: 'amazon.com',
+      rating: 4.5,
+      numberReviews: 0,
+      reviews: [],
+      category: 'Shopping'
+    }, {
+      name: 'amazon.ca',
+      rating: 4.1,
+      numberReviews: 0,
+      reviews: [],
+      category: 'Shopping'
+    }, {
+      name: 'google.com',
+      rating: 4.8,
+      numberReviews: 0,
+      reviews: [],
+      category: 'Other'
     });
   });

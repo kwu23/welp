@@ -78,6 +78,14 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+// Gets a single SitePage from the DB with URL
+export function findSite(req, res) {
+  return SitePage.find({name: req.params.name}).exec()
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
 // Creates a new SitePage in the DB
 export function create(req, res) {
   return SitePage.create(req.body)

@@ -20,6 +20,12 @@ export class SitePagesComponent {
     });
   }
 
+  searchForURL(searchTerm: HTMLInputElement): void {
+    this.$http.get('/api/sitePages/' + searchTerm).then(response => {
+      this.sitePages = response.data;
+    });
+  }
+
 }
 
 export default angular.module('welpApp.sitePages', [uiRouter])

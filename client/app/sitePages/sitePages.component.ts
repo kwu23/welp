@@ -21,10 +21,16 @@ export class SitePagesComponent {
   }
 
   searchForURL(searchTerm: HTMLInputElement): void {
-    this.$http.get('/api/sitePages/' + searchTerm).then(response => {
+    this.$http.post('/api/sitePages/' + searchTerm).then(response => {
       this.sitePages = response.data;
     });
   }
+
+  // goToSite(site: HTMLInputElement): void {
+  //   this.$http.get('/api/sitePages/' + site).then(response => {
+  //     console.log(response.data);
+  //   });
+  // }
 
 }
 

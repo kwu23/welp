@@ -8,7 +8,7 @@
         <button type="submit" class="btn btn-primary" ng-click="sitePagesCtrl.searchForURL(searchWebURL)">Search</button>
       </form>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="sitePage in sitePagesCtrl.sitePages">
-        <li><a href="#" uib-tooltip="{{sitePage.rating}}">{{sitePage.name}}</a></li>
+        <li><a href="websites/{{sitePage._id}}" uib-tooltip="{{sitePage.rating}}">{{sitePage.name}}</a></li>
       </ul>
     </div>
   </div>

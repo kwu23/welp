@@ -98,6 +98,36 @@ export function changePassword(req, res) {
     });
 }
 
+export function changeEmail(req, res) {
+  var userId = req.user._id;
+  var newEmail = String(req.body.newEmail);
+
+  return User.findById(userId).exec()
+    .then(user => {
+      user.email = newEmail;
+      return user.save()
+        .then(() => {
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+    });
+}
+
+export function changeName(req, res) {
+  var userId = req.user._id;
+  var newName = String(req.body.newName);
+
+  return User.findById(userId).exec()
+    .then(user => {
+      user.name = newName;
+      return user.save()
+        .then(() => {
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+    });
+}
+
 /**
  * Get my info
  */

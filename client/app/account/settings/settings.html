@@ -3,12 +3,47 @@
     <div class="col-sm-12">
       <h1>Settings</h1>
     </div>
-    <div class="col-sm-12">
-    	<div>Name: {{ $ctrl.getCurrentUser().name }}</div>
-    	<div>Email:</div>
-    	<div>Birthday:</div>
-    	<div>Date Joined:</div>
-    	<div>Number of Reviews: 0</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <form class="form" name="form" ng-submit="vm.changeName(form)" novalidate>
+        <div class = "form-group">
+          <label>Name: </label>
+          <input type="name" name="name" class="form-control input-sm" value="{{ vm.user.name }}" required>          
+        </div>
+        <div>
+          <button class="btn btn-inverse btn-lg btn-submit" type="submit">
+            Submit Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label>Email: </label>
+      <input type="email" name="email" class="form-control input-sm" value="{{ vm.user.email }}" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label>Birthday: </label>
+      <p type="birthday" name="birthday" value="{{ vm.user.birthday }}" required></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label>Joined: </label>
+      <p type="dateCreated" name="dateCreated" value="{{ vm.user.dateCreated }}" required></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <p ui-sref-active="active">
+        <a ui-sref="password">Change Password</a>
+      </p>
     </div>
   </div>
 </div>
+
+

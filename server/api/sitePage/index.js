@@ -6,7 +6,7 @@ var controller = require('./sitePage.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-// router.get('/:id', controller.show);
+router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.post('/:name', controller.findSite);
 router.put('/:id', controller.upsert);

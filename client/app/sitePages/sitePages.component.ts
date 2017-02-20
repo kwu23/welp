@@ -6,12 +6,14 @@ import routes from './sitePages.routes';
 
 export class SitePagesComponent {
   $http;
+  $state;
 
   sitePages = [];
 
   /*@ngInject*/
-  constructor($http) {
+  constructor($http, $state) {
     this.$http = $http;
+    this.$state = $state;
   }
 
   $onInit() {
@@ -25,13 +27,6 @@ export class SitePagesComponent {
       this.sitePages = response.data;
     });
   }
-
-  // goToSite(site: HTMLInputElement): void {
-  //   this.$http.get('/api/sitePages/' + site).then(response => {
-  //     console.log(response.data);
-  //   });
-  // }
-
 }
 
 export default angular.module('welpApp.sitePages', [uiRouter])

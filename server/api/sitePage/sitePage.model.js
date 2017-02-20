@@ -6,7 +6,11 @@ var SitePageSchema = new mongoose.Schema({
   name: String,
   rating: Number,
   numberReviews: Number,
-  reviews: Array,
+  reviews: [{
+    thisIsFillerModel: String,
+    descript: String,
+    rate: Number
+  }],
   category: String
 });
 

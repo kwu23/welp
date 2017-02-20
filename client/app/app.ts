@@ -23,6 +23,7 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import SitePagesComponent from './sitePages/sitePages.component';
+import DisplaySiteComponent from './displaySite/displaySite.component';
 
 
 
@@ -46,7 +47,8 @@ angular.module('welpApp', [
 
   util,
 
-  SitePagesComponent
+  SitePagesComponent,
+  DisplaySiteComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

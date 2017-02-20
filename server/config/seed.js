@@ -65,7 +65,19 @@ SitePage.find({}).remove()
       name: 'amazon.com',
       rating: 4.5,
       numberReviews: 0,
-      reviews: [],
+      reviews: [{
+        thisIsFillerModel: "Im Sleepy",
+        descript: "This is a gr8 site. I buy still from here all ze time.",
+        rate: 5
+      }, {
+        thisIsFillerModel: "Hello World",
+        descript: "This is an ok site.",
+        rate: 4
+      }, {
+        thisIsFillerModel: "Angular Js",
+        descript: "I buy still from here all teh time.",
+        rate: 5
+      }],
       category: 'Shopping'
     }, {
       name: 'amazon.ca',

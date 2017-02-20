@@ -9,6 +9,7 @@ export class SitePagesComponent {
   $state;
 
   sitePages = [];
+  message = '';
 
   /*@ngInject*/
   constructor($http, $state) {
@@ -25,6 +26,12 @@ export class SitePagesComponent {
   searchForURL(searchTerm: HTMLInputElement): void {
     this.$http.post('/api/sitePages/' + searchTerm).then(response => {
       this.sitePages = response.data;
+
+      if (response.data.length > 0) {
+        this.message = '';
+      } else {
+        this.message = 'The website you entered currently has no reviews. Be the first!';
+      }
     });
   }
 }

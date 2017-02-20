@@ -17,10 +17,17 @@ export class DisplaySiteComponent {
     this.$http = $http;
     this.$state = $state;
     this.$stateParams = $stateParams;
+    console.log($stateParams);
   }
 
   $onInit() {
     this.siteObj = this.$stateParams.siteObject;
+
+    if (this.siteObj == null && this.$stateParams._id) {
+      this.$http.get('/api/sitePages/' + this.$stateParams._id).then(response => {
+        this.siteObj = response.data;
+      });
+    }
   }
 }
 

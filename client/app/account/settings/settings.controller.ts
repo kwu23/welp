@@ -13,7 +13,8 @@ export default class SettingsController {
 	};
 	errors = {other: undefined};
 	submitted = false;
-	Auth;
+	message = '';
+    Auth;
   	$state;
 
 	/*@ngInject*/
@@ -23,17 +24,20 @@ export default class SettingsController {
 		this.$state = $state;
 	}
 
-	changeName(form) {
-    this.submitted = true;
+	changeInformation() {
+        this.submitted = true;
+        this.Auth.changeName(this.change.newName)
+        .catch(err => {
+            this.errors.other = err.message;
+        })
 
-    if (form.$valid) {
-      this.Auth.changeName(this.change.newName)
-      .then(() => {
-        this.$state.go('settings');
-      })
-      .catch(err => {
-        this.errors.other = err.message;
-      });
+        this.Auth.changeEmail(this.change.newEmail)
+        .then(() => {
+            this.message = "Information successfully updated!"
+        })
+        .catch(err => {
+            this.errors.other = err.message;
+        })
+
     }
-  }
 }

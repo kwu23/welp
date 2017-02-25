@@ -11,6 +11,18 @@ export function UserResource($resource) {
         controller: 'password'
       }
     },
+    changeName: {
+      method: 'PUT',
+      params: {
+        controller: 'name'
+      }
+    },
+    changeEmail: {
+      method: 'PUT',
+      params: {
+        controller: 'email'
+      }
+    },
     get: {
       method: 'GET',
       params: {

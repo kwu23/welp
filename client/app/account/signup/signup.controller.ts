@@ -14,6 +14,9 @@ export default class SignupController {
     email: '',
     password: ''
   };
+  day;
+  month;
+  year;
   errors = {};
   submitted = false;
   Auth;

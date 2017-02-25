@@ -21,6 +21,7 @@ var UserSchema = new Schema({
   },
   dateCreated: String,
   birthday: String,
+  numberOfReviews: Number,
   provider: String,
   salt: String
 });
@@ -35,6 +36,8 @@ UserSchema
   .get(function() {
     return {
       name: this.name,
+      dateCreated: this.dateCreated,
+      numberOfReviews: this.numberOfReviews,
       role: this.role
     };
   });

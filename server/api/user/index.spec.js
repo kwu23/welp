@@ -9,6 +9,7 @@ var userCtrlStub = {
   destroy: 'userCtrl.destroy',
   me: 'userCtrl.me',
   changePassword: 'userCtrl.changePassword',
+  changeName: 'userCtrl.changeName'
   show: 'userCtrl.show',
   create: 'userCtrl.create'
 };
@@ -73,6 +74,22 @@ describe('User API Router:', function() {
     it('should be authenticated and route to user.controller.changePassword', function() {
       expect(routerStub.put
         .withArgs('/:id/password', 'authService.isAuthenticated', 'userCtrl.changePassword')
+        ).to.have.been.calledOnce;
+    });
+  });
+
+  describe('PUT /api/users/:id/name', function() {
+    it('should be authenticated and route to user.controller.changeName', function() {
+      expect(routerStub.put
+        .withArgs('/:id/name', 'authService.isAuthenticated', 'userCtrl.changeName')
+        ).to.have.been.calledOnce;
+    });
+  });
+
+  describe('PUT /api/users/:id/email', function() {
+    it('should be authenticated and route to user.controller.changeEmail', function() {
+      expect(routerStub.put
+        .withArgs('/:id/name', 'authService.isAuthenticated', 'userCtrl.changeEmail')
         ).to.have.been.calledOnce;
     });
   });

@@ -35,8 +35,15 @@ export default function routes($stateProvider) {
         controllerAs: 'vm',
         authenticate: true
       })
+      .state('editSettings', {
+        url: '/settings/edit',
+        template: require('./settings/edit/editSettings.html'),
+        controller: 'EditSettingsController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
       .state('password', {
-        url: '/settings/password',
+        url: '/settings/edit/password',
         template: require('./settings/password/password.html'),
         controller: 'PasswordController',
         controllerAs: 'vm',

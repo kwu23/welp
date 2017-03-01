@@ -3,35 +3,34 @@
     <div class="col-sm-12">
       <h1>Settings</h1>
     </div>
+    <div class="col-sm-1">
+      <label>Name: </label>
+    </div>
+    <div class="col-sm-11">
+      <p type="name" name="name" required>{{ vm.user.name }}</p>
+    </div>
 
-    <form class="form">
-      <div class="col-sm-12">
-        <label>Name: </label>
-        <input type="text" ng-model="vm.change.newName" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newName" placeholder="{{vm.user.name}}">
-      </div>
-
-      <div class="col-sm-12">
-        <label>Email: </label>
-        <input type="text" ng-model="vm.change.newEmail" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newEmail" placeholder="{{vm.user.email}}">
-      </div>
-      <button type="submit" class="btn btn-primary" ng-click="vm.changeInformation()">Submit Changes</button>
-      <p class="help-block"> {{ vm.message }} </p>
-    </form>
+    <div class="col-sm-1">
+      <label>Email: </label>
+    </div>
+    <div class="col-sm-11">
+      <p type="email" name="email" required>{{ vm.user.email }}</p>
+    </div>
     
     <div class="col-sm-12">
       <label>Birthday: </label>
-      <p type="birthday" name="birthday" value="{{ vm.user.birthday }}" required></p>
+      <p type="birthday" name="birthday" required>{{ vm.user.birthday }}</p>
     </div>
 
 
     <div class="col-sm-12">
       <label>Joined: </label>
-      <p type="dateCreated" name="dateCreated" value="{{ vm.user.dateCreated }}" required></p>
+      <p type="dateCreated" name="dateCreated" required>{{ vm.user.dateCreated }}</p>
     </div>
 
     <div class="col-sm-12">
       <p ui-sref-active="active">
-        <a ui-sref="password">Change Password</a>
+        <button class="btn btn-primary" ui-sref="editSettings">Edit Settings</button>
       </p>
     </div>
   </div>

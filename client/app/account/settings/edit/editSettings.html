@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Edit Settings</h1>
+    </div>
+
+    <form class="form">
+      <div class="col-sm-12">
+        <label>Name: </label>
+        <input type="text" ng-model="vm.change.newName" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newName" placeholder="{{vm.user.name}}" ng-minlength="3" required/>
+      </div>
+
+      <div class="col-sm-12">
+        <label>Email: </label>
+        <input type="text" ng-model="vm.change.newEmail" class="form-control mb-2 mr-sm-2 mb-sm-0" id="newEmail" placeholder="{{vm.user.email}}" required/>
+      </div>
+      <div class="col-sm-3">
+        <button type="submit" class="btn btn-primary" ng-click="vm.changeInformation()">Submit Changes</button>
+        <p class="help-block"> {{ vm.message }} </p>
+      </div>
+      <div class="col-sm-3">
+        <p ui-sref-active="active">
+          <button class="btn btn-primary" ui-sref="password">Change Password</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+

@@ -8,6 +8,7 @@ import login from './login';
 import password from './settings/password';
 import settings from './settings';
 import signup from './signup';
+import editSettings from './settings/edit';
 
 
 export default angular.module('welpApp.account', [
@@ -16,7 +17,8 @@ export default angular.module('welpApp.account', [
     login,
     settings,
     password,
-    signup
+    signup,
+    editSettings
 ])
     .config(routing)
 

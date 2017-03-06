@@ -68,7 +68,8 @@ SitePage.find({}).remove()
       reviews: [{
         thisIsFillerModel: "Im Sleepy",
         descript: "This is a gr8 site. I buy still from here all ze time.",
-        rate: 5
+        rate: 5,
+        helpful: 23
       }, {
         thisIsFillerModel: "Hello World",
         descript: "This is an ok site.",

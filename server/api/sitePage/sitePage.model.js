@@ -9,7 +9,10 @@ var SitePageSchema = new mongoose.Schema({
   reviews: [{
     thisIsFillerModel: String,
     descript: String,
-    rate: Number
+    rate: Number,
+    helpful: Number,
+    unhelpful: Number,
+    owner: String
   }],
   category: String
 });

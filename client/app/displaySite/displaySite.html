@@ -4,7 +4,14 @@
     <h3>{{displaySiteCtrl.siteObj.rating}}</h3>
   </div>
 </div>
-
+<div class = "container">
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" rows="5" id="description"></textarea>
+    <label for="input-1" class="control-label">Rate This</label>
+    <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
+  </div>
+</div>
 <link rel="displaySite" type="text/scss" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 <div class="container">
   <div class="row" ng-repeat="review in displaySiteCtrl.siteObj.reviews">
